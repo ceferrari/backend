@@ -1,0 +1,80 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Webpack Dev Server",
+      "type": "node",
+      "request": "launch",
+      "protocol": "inspector",
+      "cwd": "${workspaceFolder}\\Source\\Backend.Web",
+      "program": "${workspaceFolder}\\Source\\Backend.Web\\node_modules\\webpack-dev-server\\bin\\webpack-dev-server.js",
+      "args": ["--hot", "--inline", "--config", "webpack.config.js"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "NODE_ENV": "development"
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "1.hot",
+        "order": 1
+      }
+    },
+    {
+      "name": "Debug Web",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "dotnet-build-debug-web",
+      "cwd": "${workspaceFolder}\\Source\\Backend.Web",
+      "program": "${workspaceFolder}\\Source\\Backend.Web\\bin\\Debug\\netcoreapp3.1\\Backend.Web.dll",
+      "args": [],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "stopAtEntry": false,
+      "logging": {
+        "moduleLoad": false
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "NODE_ENV": "development"
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "2.build",
+        "order": 1
+      }
+    },
+    {
+      "name": "Debug Api",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "dotnet-build-debug-api",
+      "cwd": "${workspaceFolder}\\Source\\Backend.Api",
+      "program": "${workspaceFolder}\\Source\\Backend.Api\\bin\\Debug\\netcoreapp3.1\\Backend.Api.dll",
+      "args": [],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "stopAtEntry": false,
+      "logging": {
+        "moduleLoad": false
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "NODE_ENV": "development"
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "2.build",
+        "order": 2
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug Web & Api",
+      "configurations": ["Webpack Dev Server", "Debug Web", "Debug Api"]
+    }
+  ]
+}

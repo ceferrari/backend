@@ -1,0 +1,242 @@
+/* IE and Edge compatibility */
+* {
+  min-height: 0.01px;
+}
+
+/* Layout */
+#app-sidebar {
+  background-color: #343a40;
+  height: 100vh;
+  position: fixed;
+  transform: translateX(-15rem);
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  width: 15rem;
+  z-index: 1090;
+}
+
+#app-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#app-body {
+  background-color: #f4f6f9;
+  flex: 1 0 auto;
+  overflow-x: hidden;
+  padding: 1rem 0;
+}
+
+#app-overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1080;
+}
+
+/* Header and Footer */
+#app-header,
+#app-footer {
+  background-color: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex: 0 0 3.5rem;
+  justify-content: space-between;
+}
+
+#app-header a,
+#app-footer a {
+  color: #777;
+  display: flex;
+  flex: 0 0 3.5rem;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#app-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+#app-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+/* Sidebar */
+#app-sidebar .nav,
+#app-sidebar a {
+  color: #c2c7d0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#app-sidebar p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  margin: 0;
+}
+
+#app-sidebar > .brand-link,
+#app-sidebar .user-link {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #4b545c;
+  height: 3.5rem;
+}
+
+#app-sidebar > .brand-link > img,
+#app-sidebar .user-link > img {
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  height: 2.25rem;
+}
+
+#app-sidebar > .brand-link {
+  font-size: 1.25rem;
+  padding: 0.5rem 1.2rem;
+}
+
+#app-sidebar .user-link {
+  font-size: 0.85rem;
+  padding: 0 0.7rem;
+}
+
+#app-sidebar > .nav-sidebar {
+  height: calc(100% - 3.5rem);
+  padding: 0 0.5rem;
+}
+
+#app-sidebar > .nav-sidebar .nav-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 1.7rem 0 0.5rem 0;
+}
+
+#app-sidebar > .nav-sidebar ul.nav-sub,
+#app-sidebar > .nav-sidebar .nav-item > .nav-link {
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+#app-sidebar > .nav-sidebar ul.nav-sub > .nav-item:last-child > .nav-link {
+  margin-bottom: 0;
+}
+
+#app-sidebar > .nav-sidebar .nav-item > .nav-link {
+  display: flex;
+  align-items: center;
+}
+
+#app-sidebar > .nav-sidebar .nav-item > .nav-link > .nav-icon {
+  flex: 0 0 1.6rem;
+  font-size: 1.1rem;
+  margin-right: 0.4rem;
+  text-align: center;
+}
+
+#app-sidebar > .nav-sidebar .has-sub > .nav-link .right {
+  transition: transform ease-in-out 0.5s;
+}
+
+#app-sidebar > .nav-sidebar .has-sub.open > .nav-link .right {
+  transform: rotate(-90deg);
+}
+
+/* Sidebar Colors */
+#app-sidebar > .nav-sidebar .nav-item > .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#app-sidebar > .nav-sidebar ul:not(.nav-sub) > .nav-item > .nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#app-sidebar > .nav-sidebar ul.nav-sub > .nav-item > .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #343a40;
+}
+
+#app-sidebar > .nav-sidebar ul.nav-sub {
+  background-color: rgba(0, 0, 0, 0.25);
+  display: none;
+}
+
+/* Media Queries */
+@media (max-width: 767.98px) {
+  #app.sidebar-toggled #app-sidebar {
+    transform: none;
+  }
+
+  #app.sidebar-toggled #app-overlay {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  #app-sidebar {
+    transform: none;
+    /* transition: width 0.3s ease-in-out;
+    will-change: width; */
+  }
+
+  #app-content {
+    margin-left: 15rem;
+    /* transition: margin-left 0.3s ease-in-out;
+    will-change: margin-left; */
+  }
+
+  #app-body {
+    padding: 1.5rem;
+  }
+
+  #app-sidebar p {
+    transition: margin-left 0.3s linear, opacity 0.5s ease;
+    will-change: margin-left, opacity;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  #app:not(.sidebar-toggled) #app-sidebar {
+    width: 4.5rem;
+  }
+
+  #app:not(.sidebar-toggled) #app-sidebar:hover {
+    width: 15rem;
+  }
+
+  #app:not(.sidebar-toggled) #app-sidebar:not(:hover) p {
+    margin-left: -1rem;
+    opacity: 0;
+  }
+
+  #app:not(.sidebar-toggled) #app-content {
+    margin-left: 4.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #app.sidebar-toggled #app-sidebar {
+    width: 4.5rem;
+  }
+
+  #app.sidebar-toggled #app-sidebar:hover {
+    width: 15rem;
+  }
+
+  #app.sidebar-toggled #app-sidebar:not(:hover) p {
+    margin-left: -1rem;
+    opacity: 0;
+  }
+
+  #app.sidebar-toggled #app-content {
+    margin-left: 4.5rem;
+  }
+}

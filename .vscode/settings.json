@@ -1,0 +1,39 @@
+{
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.tabSize": 4
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[vue]": {
+    "editor.formatOnSave": false
+  },
+  "dotnet-test-explorer.autoExpandTree": true,
+  "dotnet-test-explorer.enableTelemetry": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.fixAll.tslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "eslint.alwaysShowStatus": true,
+  "eslint.nodePath": "./Source/Backend.Web/node_modules",
+  "eslint.workingDirectories": [
+    { "directory": "./Source/Backend.Web", "changeProcessCWD": true }
+  ],
+  "prettier.endOfLine": "lf",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "update.showReleaseNotes": false,
+  "vsintellicode.modify.editor.suggestSelection": "disabled",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.tips.enabled": false
+}

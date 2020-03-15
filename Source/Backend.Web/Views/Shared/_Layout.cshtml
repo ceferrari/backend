@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+		<title>Backend</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="~/pwa/apple-touch-icon.png?v=eEGdkJgwzk">
+		<link rel="icon" type="image/png" sizes="32x32" href="~/pwa/favicon-32x32.png?v=eEGdkJgwzk">
+		<link rel="icon" type="image/png" sizes="16x16" href="~/pwa/favicon-16x16.png?v=eEGdkJgwzk">
+		<link rel="manifest" href="~/pwa/site.webmanifest?v=eEGdkJgwzk">
+		<link rel="mask-icon" href="~/pwa/safari-pinned-tab.svg?v=eEGdkJgwzk" color="#5bbad5">
+		<link rel="shortcut icon" href="~/pwa/favicon.ico?v=eEGdkJgwzk">
+		<meta name="msapplication-TileColor" content="#b91d47">
+		<meta name="msapplication-config" content="~/pwa/browserconfig.xml?v=eEGdkJgwzk">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" asp-href-include="~/dist/vendor*.css" />
+		<link rel="stylesheet" asp-href-include="~/dist/site*.css" />
+	</head>
+	<body>
+		@RenderBody()
+		<script asp-src-include="~/dist/runtime*.js"></script>
+		<script asp-src-include="~/dist/vendor*.js"></script>
+		<script asp-src-include="~/dist/site*.js"></script>
+	</body>
+</html>

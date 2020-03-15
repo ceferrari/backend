@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dotnet-build-debug-web",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\Source\\Backend.Web"
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "dotnet-build-debug-api",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\Source\\Backend.Api"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

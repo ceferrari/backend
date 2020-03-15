@@ -1,0 +1,17 @@
+/bin/**
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/node_modules/**
+/obj/**
+/templates/**
+/tests/bench/**
+/tests/fixtures/**
+/tests/performance/**
+/tmp/**
+/tools/internal-rules/node_modules/**
+/wwwroot/**
+test.js
+!.eslintrc.js
+!.stylelintrc.js

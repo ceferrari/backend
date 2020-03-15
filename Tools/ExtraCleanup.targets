@@ -1,0 +1,13 @@
+<Project>
+  <Target Name="ExtraCleanup" AfterTargets="Clean">
+    <ItemGroup>
+      <wwwwrootDir Include="$(ProjectDir)wwwroot/" />
+    </ItemGroup>
+    <Message Text="Deleting $(ProjectDir)$(BaseOutputPath)" Importance="high" />
+    <Message Text="Deleting $(BaseIntermediateOutputPath)" Importance="high" />
+    <Message Text="Deleting @(wwwwrootDir)" Importance="high" />
+    <RemoveDir Directories="$(BaseOutputPath)" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+    <RemoveDir Directories="@(wwwwrootDir)" />
+  </Target>
+</Project>
