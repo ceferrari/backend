@@ -6,7 +6,7 @@
           <div class="card text-white bg-success mb-3">
             <div class="card-body p-2">
               <h3 class="card-title font-weight-bold">
-                245
+                245123
               </h3>
               <p class="card-text">
                 DAU

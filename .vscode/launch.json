@@ -8,7 +8,7 @@
       "protocol": "inspector",
       "cwd": "${workspaceFolder}\\Source\\Backend.Web",
       "program": "${workspaceFolder}\\Source\\Backend.Web\\node_modules\\webpack-dev-server\\bin\\webpack-dev-server.js",
-      "args": ["--hot", "--inline", "--config", "webpack.config.js"],
+      "args": ["--config", "webpack.config.js"],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",

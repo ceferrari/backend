@@ -18,6 +18,8 @@ module.exports = () => {
         publicPath: path.join(__dirname, bundleOutputDir),
         contentBase: path.resolve(__dirname, "./wwwroot"),
         liveReload: false,
+        hot: true,
+        inline: true,
         writeToDisk: true,
         compress: true,
         // quiet: true,
@@ -97,9 +99,9 @@ module.exports = () => {
         }
       },
       plugins: [
-        new CleanWebpackPlugin({
-          cleanStaleWebpackAssets: false
-        }),
+        // new CleanWebpackPlugin({
+        //   cleanStaleWebpackAssets: false
+        // }),
         new CopyWebpackPlugin(
           [
             {
